@@ -2,11 +2,25 @@
   "name": "@flow/api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "NODE_ENV=production tsc",
+    "dev": "NODE_ENV=development tsc -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@types/compression": "0.0.36",
+    "@types/express": "^4.11.1",
+    "@types/mysql": "^2.15.4",
+    "@types/node": "^10.1.2",
+    "compression": "^1.7.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "moment": "^2.22.1",
+    "mysql": "^2.15.0",
+    "typescript": "^2.8.3"
+  }
 }
