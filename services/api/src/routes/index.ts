@@ -1,12 +1,12 @@
 import * as express from 'express';
-import { MongoClient, ObjectID } from 'mongodb';
+import { connect, db } from '../db';
 
 const router = express.Router();
 
+connect('mongodb://localhost:27017/flow').catch(error => console.warn(error));
+
 router.get('/', async (req, res) => {
-	const client: MongoClient = await MongoClient.connect('mongodb://localhost:27017/flow');
-	const db = client.db();
-	await db.collection('tasks').insertOne({ text: 'some text' });
+	await db().collection('tasks').insertOne({ text: 'some text' });
 
 	res.send('test');
 });
