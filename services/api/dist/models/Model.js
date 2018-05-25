@@ -1,9 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class Model {
-    constructor(schema) {
-        this.fill(schema);
+exports.modelSchema = {
+    created_at: {
+        type: Date,
+        default: Date.now
+    },
+    updated_at: {
+        type: Date,
+        default: Date.now
     }
-}
-exports.Model = Model;
+};
 //# sourceMappingURL=Model.js.map
