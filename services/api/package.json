@@ -5,8 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "NODE_ENV=production tsc",
+    "server": "nodemon ./dist/index.js",
     "dev": "NODE_ENV=development tsc -w",
-    "start": "nodemon ./dist/index.js",
+    "start": "run-p server dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,14 +17,19 @@
     "@types/compression": "0.0.36",
     "@types/dotenv": "^4.0.3",
     "@types/express": "^4.11.1",
+    "@types/mongodb": "^3.0.18",
     "@types/mysql": "^2.15.4",
     "@types/node": "^10.1.2",
     "compression": "^1.7.2",
-    "nodemon": "^1.17.5",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "moment": "^2.22.1",
+    "mongodb": "^3.1.0-beta4",
     "mysql": "^2.15.0",
+    "nodemon": "^1.17.5",
     "typescript": "^2.8.3"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.3"
   }
 }
