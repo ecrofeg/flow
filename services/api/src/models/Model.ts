@@ -1,9 +1,9 @@
 export abstract class Model<T> {
-    public id: number;
+	public id: number;
 
-    constructor(schema: T) {
-        this.fill(schema);
-    }
+	constructor(schema: T) {
+		this.fill(schema);
+	}
 
-    public abstract fill(schema: T): void;
+	public abstract fill(schema: T): void;
 }
