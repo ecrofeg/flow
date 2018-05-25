@@ -1,13 +1,13 @@
 import { Document, model, Schema, Types } from 'mongoose';
-import { ModelInterface, modelSchema } from './Model';
 
-export interface ProductInterface extends Document, ModelInterface {
+export interface ProductInterface extends Document {
 	author: Types.ObjectId
 }
 
 const schema = new Schema({
-	...modelSchema,
 	author: Types.ObjectId
+}, {
+	timestamps: true
 });
 
 export default model<ProductInterface>('Product', schema);
