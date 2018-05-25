@@ -1,10 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Model_1 = require("./Model");
-class Product extends Model_1.Model {
-    fill(schema) {
-        this.name = schema.name;
-    }
-}
-exports.Product = Product;
+const mongoose_1 = require("mongoose");
+const schema = new mongoose_1.Schema({
+    author: mongoose_1.Types.ObjectId
+});
+exports.default = mongoose_1.model('Product', schema);
 //# sourceMappingURL=Product.js.map

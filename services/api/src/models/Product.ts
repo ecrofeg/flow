@@ -1,17 +1,11 @@
-import { Model } from './Model';
-import { Schema } from './Schema';
-import { User } from './User';
+import { Document, model, Schema, Types } from 'mongoose';
 
-export interface ProductSchema extends Schema {
-	author_id: number;
-	name: string;
+export interface ProductInterface extends Document {
+	author: Types.ObjectId
 }
 
-export class Product extends Model<ProductSchema> {
-	public name: string;
-	public author: User;
+const schema = new Schema({
+	author: Types.ObjectId
+});
 
-	public fill(schema: ProductSchema): void {
-		this.name = schema.name;
-	}
-}
+export default model<ProductInterface>('Product', schema);
